@@ -1,0 +1,40 @@
+<a href="#1" onClick="EvalSound('song1'); return true;"> suspendidos</a>
+<audio id="song1" class="player" src="1.suspensión.mp3" controls preload="auto" autobuffer></audio>
+
+<a href="#2" onClick="EvalSound('song2'); return true;"> inercia </a>
+<audio id="song2" class="player" src="2.inercia.mp3" controls preload="auto" autobuffer></audio>
+
+<a href="#3" onClick="EvalSound('song3'); return true;">comodidad</a>
+<audio id="song3" class="player" src="3.comodidad.mp3" controls preload="auto" autobuffer></audio>
+
+<a  href="#4" onClick="EvalSound('song4'); return true;">hueco </a>
+<audio id="song4" class="player" src="4.hueco.mp3" controls preload="auto" autobuffer></audio>
+
+<a href="#5" onClick="EvalSound('song5'); return true;">miles de años</a>
+<audio id="song5" class="player" src="5.miles de años.mp3" controls preload="auto" autobuffer></audio>   
+
+<a href="#6" onClick="EvalSound('song6'); return false;">playa ocre</a> 
+<audio id="song6" class="player" src="6.playa ocre.mp3" controls preload="auto" autobuffer></audio>    
+
+
+<a href="#7" onClick="EvalSound('song7'); return true;" rel="noopener">silencio</a>
+<audio id="song7" class="player" src="7.silencio.mp3" controls preload="auto" autobuffer></audio>  
+
+
+
+          <script>
+            var currentPlayer;
+            function EvalSound(soundobj) {
+            
+             var thissound=document.getElementById(soundobj);
+             if(currentPlayer  && currentPlayer != thissound) {
+                  currentPlayer.pause(); 
+             }
+             if (thissound.paused)
+                        thissound.play();
+                else
+                    thissound.pause();
+                    thissound.currentTime = 0;
+                     currentPlayer = thissound;
+            }
+            </script>
